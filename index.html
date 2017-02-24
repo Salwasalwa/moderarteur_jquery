@@ -5,27 +5,28 @@
     <meta charset="utf-8">
     <title>Titre de la page</title>
     <link rel="stylesheet" href="./css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 
 <body>
     <form>
-        <textarea name="Message" id="textarea" value=""></textarea>
+        <textarea name="Message" value=""></textarea>
         <button type="button" name="button">Modérer</button>
-        <div id="reponse">
+        <div>
 
         </div>
     </form>
 </body>
 <script>
     $(document).ready(function() {
-        var textareaElement = $("#textarea").val();
-        // var textareaElement = document.getElementById("textarea");
-        var reponseElement = $("#reponse")
-        // var reponseElement = document.getElementById("reponse");
+        // var textareaElement = $("#textarea").val(); //jquery
+        // var textareaElement = document.getElementById("textarea"); //javascript
+        // var reponseElement = $("#reponse")//jquery
+        // var reponseElement = document.getElementById("reponse"); //javascript
 
         $("button").click(function() {
-            var moderateValueTextarea = textareaElement.replace(/:\)|:D|:'\)/g, "--");
-                reponseElement.html(moderateValueTextarea);
+            var moderateValueTextarea = ($('textarea').val().replace(/:\)|:D|:'\)/g, "--"));
+            $('div').html(moderateValueTextarea);
         });
         // function moderate() {
         //     var valueTextarea = textareaElement.value;
